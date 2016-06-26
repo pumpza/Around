@@ -6,46 +6,46 @@ angular.module 'aroundApp'
   $scope.location = {}
   $scope.menus = [{name:'', price: ''}]
   $scope.place = {
-  	name:     '',
-  	lat:      '',
-  	lon:      '',
-  	open_at:  '',
-  	close_at: '',
-  	image:    '',
-  	menu:     $scope.menus,
-  	created_by: $scope.user || 'guest'
- 	}
+    name: ''
+    lat: ''
+    lon: ''
+    open_at: ''
+    close_at: ''
+    image: ''
+    menu: $scope.menus
+    created_by: $scope.user || 'guest'
+  }
 
- 	console.log Auth.getCurrentUser()
+  console.log Auth.getCurrentUser()
 
- 	$scope.imageUpload = {name: '', type: '', size: '', path: 'place', data: ''}
+  $scope.imageUpload = {name: '', type: '', size: '', path: 'place', data: ''}
 
   $scope.addMenu = () ->
-  	$scope.menus.push({name: '', price: ''})
+    $scope.menus.push({name: '', price: ''})
 
   $scope.removeMenu = (index) ->
-  	$scope.menus.splice(index, 1)
+    $scope.menus.splice(index, 1)
 
   $scope.addPlace = ->
     console.log $scope.place
     $http.post('/api/places', {data: $scope.place, image: $scope.imageUpload}).success (place) ->
-	    console.log place
+      console.log place
 
   $scope.preview = (input) ->
-	  if input.files and input.files[0]
-	    reader = new FileReader
+    if input.files and input.files[0]
+      reader = new FileReader
 
-	    reader.onload = (e) ->
-	      $('#placePreview').attr 'src', e.target.result
-	      $scope.imageUpload.data = e.target.result
-	      $scope.imageUpload.path = 'event/banner'
-	      return
+      reader.onload = (e) ->
+        $('#placePreview').attr 'src', e.target.result
+        $scope.imageUpload.data = e.target.result
+        $scope.imageUpload.path = 'event/banner'
+        return
 
-	    reader.readAsDataURL input.files[0]
-	    $scope.imageUpload.name = input.files[0].name
-	    $scope.imageUpload.type = input.files[0].type
-	    $scope.imageUpload.size = input.files[0].size
-	  return
+      reader.readAsDataURL input.files[0]
+      $scope.imageUpload.name = input.files[0].name
+      $scope.imageUpload.type = input.files[0].type
+      $scope.imageUpload.size = input.files[0].size
+    return
 
   $scope.$on 'mapInitialized', (event, map) ->
 
@@ -54,8 +54,8 @@ angular.module 'aroundApp'
       $scope.place.lat = c.latitude
       $scope.place.lon = c.longitude
       $scope.positions.push
-	      lat: c.latitude
-	      lng: c.longitude
+        lat: c.latitude
+        lng: c.longitude
       $scope.$apply()
 
     input = document.getElementById('pac-input')
