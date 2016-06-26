@@ -1,0 +1,47 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+<div class="col-sm-12">
+
+	<div class="row">
+		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+		<map center="current-location" zoom="24" on-click="placeMarker()" map-type-id="SATELLITE">
+			<marker ng-repeat="pos in positions" position="{{pos.lat}}, {{pos.lng}}"></marker>
+		</map>
+	</div>
+
+	<div class="row">
+		<ul class="list-group">
+			<li class="list-group-item">
+				<input  ng-model="place.lat" placeholder="ลัตติจูด / Latitude">
+				<input  ng-model="place.lon" placeholder="ลองติจูด / Lontitude">
+			</li>
+	    <li class="list-group-item">
+	    	ชื่อร้าน
+	    	<input ng-model="place.name">
+	    </li>
+	    <li class="list-group-item">
+	    	เวลาเปิด
+	    	<input type="time" ng-model="place.open_at">
+	    	เวลาปิด
+	    	<input type="time" ng-model="place.close_at">
+	    </li>
+	    <li class="list-group-item">
+
+	    	<div ng-repeat="menu in menus" style="margin-bottom: 5px;">
+	    		ชื่อเมนู <input ng-model="menu.name"> ราคา <input ng-model="menu.price">
+	    		<div class="btn btn-danger" ng-click="removeMenu($index)">X</div>
+	    	</div>
+	    	<div class="btn btn-primary" ng-click="addMenu()"> + </div>
+	    </li>
+	    <li class="list-group-item">รูปร้าน <input type="file" ng-model="place.image" onchange="angular.element(this).scope().preview(this)" >
+	    <img id="placePreview" style="width: 100px;">
+	    </li>
+
+	  </ul>
+	  <div class="btn btn-success" ng-click="addPlace()">Save</div>
+	</div>
+
+
+</div>
+</div>

@@ -27,6 +27,9 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <!--<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=geometry,places'></script>
+    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOvKce_4BHdVtLbJPLApk3tmaeMk_buAE&libraries=geometry,places"></script>
     <div ui-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -55,6 +58,7 @@
       <script src="bower_components/lodash/lodash.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
@@ -68,6 +72,8 @@
           <script src="app/account/signup/signup.js"></script>
           <script src="app/admin/admin.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/place/create/create.js"></script>
+          <script src="app/place/place.js"></script>
           <script src="components/auth/auth.js"></script>
           <script src="components/auth/user.js"></script>
           <script src="components/modal/modal.js"></script>

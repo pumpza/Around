@@ -7,6 +7,7 @@ angular.module 'aroundApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap'
+  'ngMap'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
   $urlRouterProvider
