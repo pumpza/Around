@@ -8,9 +8,11 @@ PlaceSchema = new Schema
   menu:     []
   open_at:  Date
   close_at: Date
-  lat: String
-  lon: String
-  image: String
+  lat:      String
+  lon:      String
+  image:    String
+  phone:    String
   created_by: {}
+  note:     String
 
 module.exports = mongoose.model 'Place', PlaceSchema

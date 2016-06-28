@@ -48,14 +48,13 @@ angular.module 'aroundApp'
 	  return
 
   $scope.$on 'mapInitialized', (event, map) ->
-
     navigator.geolocation.getCurrentPosition (position) ->
       c = position.coords
       $scope.place.lat = c.latitude
       $scope.place.lon = c.longitude
       $scope.positions.push
-	      lat: c.latitude
-	      lng: c.longitude
+	      #lat: c.latitude
+	      #lng: c.longitude
       $scope.$apply()
 
     input = document.getElementById('pac-input')
