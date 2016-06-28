@@ -13,6 +13,7 @@ Main application routes
 
   module.exports = function(app) {
     app.use('/api/things', require('./api/thing'));
+    app.use('/api/places', require('./api/place'));
     app.use('/api/users', require('./api/user'));
     app.use('/auth', require('./auth'));
     app.route('/:url(api|auth|components|app|bower_components|assets)/*').get(errors[404]);

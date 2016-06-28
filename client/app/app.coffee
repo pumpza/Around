@@ -6,7 +6,7 @@ angular.module 'aroundApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
   'ngMap'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
