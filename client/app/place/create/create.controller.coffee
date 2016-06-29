@@ -80,6 +80,7 @@ angular.module 'aroundApp'
     return
 
   $scope.getCurrentPosition = () ->
+  	$scope.positions = []
   	navigator.geolocation.getCurrentPosition (position) ->
       c = position.coords
       $scope.place.lat = c.latitude
