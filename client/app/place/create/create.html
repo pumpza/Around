@@ -4,8 +4,7 @@
 <div class="col-sm-12">
 
 	<div class="row">
-		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
-		<map center="current-location" zoom="24" on-click="placeMarker()" map-type-id="SATELLITE">
+		<map center="current-location" zoom="20" on-click="placeMarker()" map-type-id="SATELLITE">
 			<marker ng-repeat="pos in positions" position="{{pos.lat}}, {{pos.lng}}"></marker>
 		</map>
 	</div>
@@ -41,8 +40,18 @@
 	    	<img id="placePreview" style="width: 100px;">
 	    </li>
 	    <li class="list-group-item">
-				<textarea  ng-model="place.note"></textarea>
+	    	<input  ng-model="newTag" placeholder="ชื่อ Tag">
+				<div class="btn btn-success" ng-click="addTag()">เพิ่ม Tag</div>
+	    </li>
+	    <li class="list-group-item">
+	    	<div class="tag-item" ng-repeat="t in place.tags">
+	    		{{t}} <div class="btn btn-danger" ng-click="removeTag($index)">X</div>
+	    	</div>
 			</li>
+	    <li class="list-group-item">
+				<textarea  ng-model="place.note" placeholder="note เพิ่มเติม"></textarea>
+			</li>
+
 
 	  </ul>
 	  <div class="btn btn-success" ng-click="addPlace()">Save</div>

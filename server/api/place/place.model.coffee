@@ -12,6 +12,7 @@ PlaceSchema = new Schema
   lon:      String
   image:    String
   phone:    String
+  tags:      []
   created_by: {}
   note:     String
 

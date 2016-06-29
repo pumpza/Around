@@ -1,49 +1,9 @@
-.section-create-event {
-	select, input, .btn {
-		margin-top: 10px;
-	}
-	.create-box {
-		position: relative;
-		margin: auto;
-		margin-top: 20px;
-		width: 500px;
-		background: #fff;
-		padding: 20px;
-		max-width: 100%;
-		border-radius: 4px;
-		box-shadow: 0px 0px 3px black;
-		button {
-			position: relative;
-			margin: auto;
-			margin-top: 10px;
-			display: block;
-		}
-		input.radius {
-			width: 90%;
-			border: 1px solid #999;
-			border-radius: 4px;
-			margin-bottom: 10px;
-		}
-		map {
-			margin-bottom: 10px;
-		}
-	}
-	h4 {
-		color: #444;
-		margin-top: 10px;
-	}
-	.col-sm-6 {
-		input {
-			padding: 0px 10px;
-			border: 1px solid #999;
-			border-radius: 4px;
-		}
-	}
-	#EventBannerPreview {
-		max-width: 100%;
-	}
-	#pac-input {
-		width: 200px;
-		margin-top: 7px;
-	}
+.tag-item {
+	background: #999;
+	color: #fff;
+	border-radius: 8px;
+	padding: 5px;
+	display: inline;
+	text-align: center;
+	margin-left: 10px;
 }
