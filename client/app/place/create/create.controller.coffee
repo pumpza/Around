@@ -35,33 +35,33 @@ angular.module 'aroundApp'
       $scope.resetData()
 
   $scope.addTag = () ->
-  	if $scope.place.tags.indexOf($scope.newTag) >= 0
-  		$scope.newTag = ''
-  		return
-  	$scope.place.tags.push($scope.newTag)
-  	$scope.newTag = ''
+    if $scope.place.tags.indexOf($scope.newTag) >= 0
+      $scope.newTag = ''
+      return
+    $scope.place.tags.push($scope.newTag)
+    $scope.newTag = ''
 
   $scope.removeTag = (index) ->
-  	$scope.place.tags.splice(index, 1)
+    $scope.place.tags.splice(index, 1)
 
   $scope.resetData = () ->
-  	$scope.positions = []
-	  $scope.user = Auth.getCurrentUser()
-	  $scope.location = {}
-	  $scope.menus = [{name:'', price: ''}]
-	  $scope.place = {
-	    name: ''
-	    lat: ''
-	    lon: ''
-	    open_at: ''
-	    close_at: ''
-	    image: ''
-	    tags: []
-	    note: ''
-	    menu: $scope.menus
-	    created_by: $scope.user || 'guest'
-	  }
-	  $scope.newTag = ''
+    $scope.positions = []
+    $scope.user = Auth.getCurrentUser()
+    $scope.location = {}
+    $scope.menus = [{name:'', price: ''}]
+    $scope.place = {
+      name: ''
+      lat: ''
+      lon: ''
+      open_at: ''
+      close_at: ''
+      image: ''
+      tags: []
+      note: ''
+      menu: $scope.menus
+      created_by: $scope.user || 'guest'
+    }
+    $scope.newTag = ''
 
   $scope.preview = (input) ->
     if input.files and input.files[0]
@@ -80,8 +80,8 @@ angular.module 'aroundApp'
     return
 
   $scope.getCurrentPosition = () ->
-  	$scope.positions = []
-  	navigator.geolocation.getCurrentPosition (position) ->
+    $scope.positions = []
+    navigator.geolocation.getCurrentPosition (position) ->
       c = position.coords
       $scope.place.lat = c.latitude
       $scope.place.lon = c.longitude
