@@ -13,10 +13,10 @@ angular.module 'aroundApp'
         lat: p.lat
         lng: p.lon
 
-  $scope.addThing = ->
-    return if $scope.newThing is ''
-    $http.post '/api/things',
-      name: $scope.newThing
+  # $scope.addThing = ->
+  #   return if $scope.newThing is ''
+  #   $http.post '/api/things',
+  #     name: $scope.newThing
 
   $scope.goCreatePlace = () ->
     window.location.href = "/place/create"
